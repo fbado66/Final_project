@@ -10,7 +10,5 @@
 
 Character.create(
       name: 'Rill Boismortier',
-       
-      created_at: '12-12-12', 
-      updated_at: '12-12-13'
+      external_id: 1      
 )
