@@ -3,9 +3,19 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+#profile_image{
+  background-image: image-url('2.jpg');
+  background-repeat: no-repeat;
+  height: 90%;
+  width: 120%;
+    
+}
+
+
 
 #style{
 
+  
   .field{
     color: blue; 
     width: 300px;
@@ -16,6 +26,14 @@
 font-family: 'Shadows Into Light', cursive;
   text-align: center;
   text-shadow: 2px 2px #ff0000;
+}
+
+.titles_4{
+  color:black; 
+  font-family: 'Creepster', cursive;
+  text-align: center;
+  text-shadow: -3px -2px green;
+  margin-right: 119px;
 }
 
 .subtitle{
@@ -53,6 +71,20 @@ font-family: 'Shadows Into Light', cursive;
   margin-left: 35%;
 }
 
+.button{
+  font-size: 15px;
+  text-decoration: none;
+  color: white;
+  background-color: green;
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  border-radius: 8px;
+  box-shadow: -2px 2px black;
+  margin-left: 35%;
+}
+
 .button_3{
   font-size: 15px;
   text-decoration: none;
@@ -79,8 +111,21 @@ font-family: 'Shadows Into Light', cursive;
   padding-top: 15px;
   border-radius: 8px;
   box-shadow: -2px 2px black;
-  margin-left: 5%;
-  
+  margin-left: 5%; 
+}
+
+.button_logout{
+  font-size: 15px;
+  text-decoration: none;
+  color: white;
+  background-color: red;
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  border-radius: 8px;
+  box-shadow: -2px 2px black;
+  margin-left: 95%;
 }
 
 
