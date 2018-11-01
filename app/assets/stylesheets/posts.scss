@@ -16,4 +16,58 @@
   text-align: center;
   text-shadow: -3px -2px green;
 }
+
+
+
+.link{
+  font-size: 15px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  background-color: green;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  border-radius: 8px;
+ margin-left: 100px;
+}
+
+
+
+}
+
+.titles_4{
+  color: blue; 
+font-family: 'Shadows Into Light', cursive;
+  text-align: center;
+  text-shadow: 2px 2px #ff0000;
+}
+
+#style_3{
+
+  background-image: image-url('post.png');
+  background-repeat: no-repeat;
+  height: 600px;
+  padding: 10%;
+  display: flex;
+  width: 95%;
+
+img{
+  opacity: 0.8;
+}
+.table{
+  border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 10px 8px 10px #888888;
+    
+    font-size: 20px;
+}
+.titles_3{
+  color:black; 
+  font-family: 'Creepster', cursive;
+  text-align: center;
+  text-shadow: -3px -2px green;
+  margin-top: -210px;
+  display: inline-flex;
+}
+
 }

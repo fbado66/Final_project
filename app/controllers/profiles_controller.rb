@@ -27,7 +27,7 @@ class ProfilesController < ApplicationController
     response = HTTParty.get("https://enigmatic-sea-95747.herokuapp.com/api/v1/characters/#{id}")
     @data = response.parsed_response["data"]
         @image =@data['character']['image_url']
-        puts @image_url =@data['character']
+        @image_url =@data['character']
         puts current_user.character_id
 
   end
@@ -48,5 +48,20 @@ class ProfilesController < ApplicationController
      
   end
 
+  def name
+    @user = current_user
+    # @users_character = UsersCharacter.find(params[:id])
+    @users = User.all.map{ |c| [ c.character_id] }
+    @character = Character.all.map{ |c| [ c.name] }
+
+    id=current_user.character_id
+    response = HTTParty.get("https://enigmatic-sea-95747.herokuapp.com/api/v1/characters/#{id}")
+    @data = response.parsed_response["data"]
+        @image =@data['character']['image_url']
+        @image_url =@data['character']
+
+render 'show'
+
+  end 
 
 end 

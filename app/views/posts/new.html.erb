@@ -1,21 +1,21 @@
-<div id="style">
+<div id="style_3">
 
-  <div class="titles_2"><h1 style="font-size:70px">Black Clover</h1></div>
-</div>
-<h1 > New.html.erb for posts </h1>
+  <div class="titles_3"><h1 style="font-size:50px">Black Clover</h1></div>
+<br><br><br><br><br><br><br><br><br>
 
-
+<div class="table">
 <%= form_with(model: @post) do |form| %>  
  <%= form.hidden_field :user_id, value: current_user.id %>
-<strong>Title:</strong><br/>
-<%= form.text_field :title, placeholder: "lol" %><br/><br/>
-<div><strong>Content:</strong></div>
-<%= form.text_area :body %><br/><br/>             
+<strong style="color:white;">Title:</strong><br/>
+<%= form.text_field :title, placeholder: "title", :maxlength=>"55" %><br/><br/>
+<div><strong style="color:white;">Content:</strong></div>
+<%= form.text_area :body, cols: "60", rows: "5"  %><br/><br/>             
 <%= form.submit :class => "btn btn-success"%>
   <% end %>
+  </div>
  
 
- 
+ </div>
 
 
 

@@ -6,14 +6,14 @@
 #landing_page{
   background-image: image-url('cover.jpg');
   background-repeat: no-repeat;
-  height: 800px;
+  height: 600px;
   padding: 10%;
   display: flex;
   width: 100%
 
 
 img{
-  height: 800px;
+  height: 100%;
   display: block;
     margin-left: auto;
     margin-right: auto;
@@ -31,19 +31,6 @@ img{
   text-shadow: 6px 5px yellow;
 }
 
-.button{
-  text-decoration: none;
-  color: black;
-  background-color: yellowgreen;
-  padding-left: 60px;
-  padding-right: 60px;
-  padding-top: 15px;
-  border-radius: 8px;
-  box-shadow: -2px 2px black;
-  width: 30px; 
-  height: 30px;
 
-  
-}
 
 }

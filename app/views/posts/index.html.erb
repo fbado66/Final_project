@@ -3,26 +3,31 @@
 <div class="titles_2"><h1 style="font-size:70px">Black Clover</h1></div>
 <p>Find me in app/views/posts/index.html.erb</p>
 
-<div class="subtitle_2"><h2><%=Character.find(@user.character_id).name%></h2></div><br><br>
-<div id="center"><iframe width="880" height="315" src= <%=(@videos_per_character)[@user.character_id]%> ></iframe></div></div>
+<div class="subtitle_2"><h2 style="margin-right:240px;"><%=Character.find(@user.character_id).name%></h2></div><br><br>
+
+  <div class="container">
+  <iframe width="80%" height="350" src= <%=(@videos_per_character)[@user.character_id]%> ></iframe></div>
+    </div>
+    </div>
 <div class="container">
-      <%= link_to 'New Comment', new_comment_path, class: "btn btn-success" %> 
-        <%= link_to 'New Post', new_post_path, class: "btn btn-success" %>
+<br>
+        <div id="size"><%= link_to 'New Post', new_post_path, class: "btn btn-success btn-lg btn-block col-md-7 offset-md-1 col" %></div>
         <br>
         <br>
 </div>
 
 <div class="container">
+<br><br>
 <% @posts.each do |post| %>
   <span id="killer<%= post.id %>">    
-        <div class="card border-success mb-3" style="max-width: 880px;">
-          <div class="card-header bg-transparent border-success"><%=User.find((post.user_id)).first_name.capitalize%>, said</div>
+        <div class="card border-success mb-3" style="max-width: 880px;background-color:#f4f0f0;border-radius:15px;">
+          <div class="card-header bg-transparent border-success"><strong><%=User.find((post.user_id)).first_name.capitalize%></strong>, said</div>
             <div class="card-body text-success">
               <h5 class="card-title"><strong>Title: <%= post.title %></strong> </h5>
                 <p class="card-text"><%= post.body %></p>
             </div>
-          <div class="card-footer bg-transparent border-success">Made on <%= post.created_at_formatted %></div>
-        <div> <%= link_to(post_path(id: post.id), method: :delete, remote: true) do %>
+          <div class="card-footer bg-transparent border-success"> <span style="margin-left:450px"> created on<%= post.created_at_formatted %></span></div>
+        <div style="margin-left:450px"> <%= link_to(post_path(id: post.id), method: :delete, remote: true) do %>
       <p class="text-center"><span class="glyphicon glyphicon-trash"></span></p>
               <% end %> 
         
@@ -37,34 +42,13 @@
   </div>
 </div>
 
-
-<div class="container">
-  <% @comments.each do |comment| %>
-   <span id="killer<%= comment.id %>">     
-        <div class="card border-warning mb-3" style="max-width: 880px;">
-            <div class="card-body text-success">
-              <h5 class="card-title"><strong>Title: <%= comment.title %></strong> </h5>
-                <p class="card-text"><%= comment.body %></p>
-            </div>
-          <div class="card-footer bg-transparent border-success">Made on <%= comment.created_at_formatted %></div>
-            <div> <%= link_to(comment_path(id: comment.id), method: :delete, remote: true) do %>
-                 <p class="text-center"><span class="glyphicon glyphicon-trash"></span></p>
-                 <% end %>
-            </div>
-    </span><br><br>
-    </div>
-      <div class="container">
-        <% end %>
-      </div>
-</div>
-
       
-<div id="center"><%= link_to 'VIDEOS', user_posts_path, class: "btn btn-success" %></div>
-<%for i in (1..10) do%> 
-<iframe width="150" height="140"
+<div id="center"><%= link_to 'Videos', user_posts_path, class: "btn btn-success btn-lg btn-block col-md-6 offset-md-2 col" %></div><br><br><br><br><br>
+<div class="container"><%for i in (1..10) do%> 
+<iframe width="190" height="250"
 src= <%=(@videos_per_character[i])%> >
-</iframe>
-<%end%>
+</iframe> 
+<%end%></div>
 
 </div>
 
