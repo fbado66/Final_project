@@ -1,0 +1,49 @@
+<h1>Comments#index</h1>
+<p>Find me in app/views/comments/index.html.erb</p>
+
+
+
+<div class="container">
+  <%= link_to 'New Comment', new_comment_path, class: "btn btn-success btn-lg btn-block" %>
+</div>
+   <div class="container">
+    <div class="row"> 
+      <div class="col-md-14 col"> 
+        <table class="table table-bordered table-striped table-hover">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Id:</th>
+              <th scope="col">Title:</th>
+              <th scope="col">Content:</th> 
+              <th scope="col">Created on</th>
+              <th scope="col">Updated on</th>
+              <th scope="col">Delete</th>
+            </tr>
+          </thead >
+             <% @comments.each do |comment| %>
+          <tbody id="killer<%= comment.id %>">
+           <tr>
+              <td><%= link_to comment.id, comment_path(comment), :class => 'btn btn-default'  %></td>
+              <th><%= comment.title %></td>
+              <td><%= comment.body %></td>
+              <td> <%= comment.created_at_formatted %></td>
+              <td><%= comment.updated_at_formatted %></td>
+              <td>  
+                 <%= link_to(comment_path(id: comment.id), method: :delete, remote: true) do %>
+                 <p class="text-center"><span class="glyphicon glyphicon-trash"></span></p>
+                 <% end %>
+              </td>
+           </tr>
+          </tbody>
+         <% end %>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+

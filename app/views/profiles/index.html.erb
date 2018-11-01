@@ -1,0 +1,17 @@
+<h1>Profiles#index</h1>
+<p>Find me in app/views/profiles/index.html.erb</p>
+        
+        <%=@user[1]['first_name']%> <br>
+
+<% i = 0%>
+<% loop do %>
+<%= @yay = ({character_id: current_user.character_id}).length%>
+      <%= User.where({character_id: current_user.character_id})[i].first_name %>  
+  <% i += 1 %>
+  <% if i > @yay  %>
+    <% break %>
+  <% end %>
+<% end %>
+
+
+ 

@@ -1,0 +1,11 @@
+<h1> new.html.erb for comments </h1>
+
+
+<%= form_with(model: @comment) do |form| %>  
+              <strong>Title:</strong><br/>
+              <%= form.text_field :title, placeholder: "comment" %><br/><br/>
+              <div><strong>Content:</strong></div>
+              <%= form.text_area :body %><br/><br/>
+              <%= form.submit :class => "btn btn-success"%>
+             <% end %>
+ 

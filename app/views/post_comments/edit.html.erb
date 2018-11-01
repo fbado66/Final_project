@@ -1,0 +1,9 @@
+<h1> Edit.html.erb on post_comments </h1>
+
+
+<%= form_with(model: @post_comment) do |form| %>
+  Post: <%= form.select :post_id, options_for_select(@post, @post_comment.post_id) %><br />
+<%= form.submit %>
+<% end %>
+
+

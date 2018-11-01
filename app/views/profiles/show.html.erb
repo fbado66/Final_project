@@ -1,0 +1,29 @@
+<div class="col-md-8 offset-md-2 col"> 
+    <div id="style">
+         <br/>
+
+    <div class="titles"> <h1> MY SPACE </h1></div>
+      <p>Find me in app/views/profiles/show.html.erb</p>
+    <div class="subtitle"><h2>Welcome <strong><%=@user.first_name.capitalize%> 
+        <%=@user.last_name.capitalize%></strong></h2></div> <br> <br>
+        <div id="center"><%=link_to 'EDIT', edit_user_registration_path, class:"button" %></div> <br><br>
+            <div class="subtitle"><h2>My Character</h2> <br></div>  <div class="titles"><h1><%=Character.find(current_user.character_id).name%></h1> </div><br><br>
+                <div id="center_1"><iframe width="320" height="500" src= <%=(@image)%> ></iframe></div>
+
+              <div class="subtitle"><h2>People in common </h2></div>     
+          <% i = 0%>
+<% loop do %> <% @yay = ({character_id: current_user.character_id}).length%>
+         <div class="titles"><h3> <%= User.where({character_id: current_user.character_id})[i].first_name.capitalize %></h3></div>
+        <% i += 1 %> <% if i > @yay  %> <% break %>
+  <% end %>
+        <% end %>    
+        <br>
+      <%= link_to 'POSTS', posts_path, class: "button_2" %>
+        <br><br><br><br>
+        <%= link_to 'VIDEOS', user_posts_path, class: "button_2"%>
+        <br><br>
+    <div>
+<div>
+           
+                      
+  

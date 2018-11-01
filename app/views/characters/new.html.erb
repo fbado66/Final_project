@@ -1,0 +1,7 @@
+
+
+<%= form_with(model: @character) do |form| %>  
+              <strong>Character:</strong><br/>
+              <%= form.text_field :name, placeholder: "Character" %><br/><br/>
+              <%= form.submit :class => "btn btn-success"%>
+             <% end %>

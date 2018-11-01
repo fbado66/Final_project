@@ -1,0 +1,12 @@
+<h1>Posts#edit</h1>
+<p>Find me in app/views/posts/edit.html.erb</p>
+
+ 
+  <%= form_with(model: @post) do |form| %>
+  <div>Title:</div> 
+  <%= form.text_field(:title) %><br /><br/>
+  <div>Content:</div>
+  <%= form.text_area(:body) %><br /><br/>
+  <%= form.submit class: "btn btn-success" %>
+  <% end %>
+      

@@ -1,0 +1,115 @@
+    <div id="style_2">
+         <br/> <br>
+<div class="titles_2"><h1 style="font-size:70px">Black Clover</h1></div>
+<p>Find me in app/views/posts/index.html.erb</p>
+
+<div class="container">
+  <%= link_to 'New Post', new_post_path, class: "btn btn-success btn-lg btn-block" %>
+</div>
+   
+<div class="subtitle_2"><h2><%=Character.find(@user.character_id).name%></h2></div><br><br>
+<div id="center"><iframe width="420" height="315" src= <%=(@videos_per_character)[@user.character_id]%> ></iframe></div>
+
+
+
+
+<div>
+        <table class="table table-bordered table-striped table-hover">
+          <thead class="thead-dark">
+            <tr>
+            <th scope="col">Name:</th>
+              <th scope="col">Id:</th>
+              <th scope="col">Title:</th>
+              <th scope="col">Content:</th> 
+              <th scope="col">Created on</th>
+              <th scope="col">Updated on</th>
+              <th scope="col">Delete</th>
+              <th scope="col">Reply </th>
+            </tr>
+          </thead >
+             <% @posts.each do |post| %>
+          <tbody id="killer<%= post.id %>">
+           <tr>
+             <td><%=User.find((post.user_id)).first_name.capitalize%><td>
+              <td><%= link_to post.id, post_path(post), :class => 'btn btn-default'  %></td>
+              <th><%= post.title %></td>
+              <td><%= post.body %></td>
+              <td> <%= post.created_at_formatted %></td>
+              <td><%= post.updated_at_formatted %></td>
+              <td>  
+                 <%= link_to(post_path(id: post.id), method: :delete, remote: true) do %>
+                 <p class="text-center"><span class="glyphicon glyphicon-trash"></span></p>
+                 <% end %>
+              </td>
+              <td> <%= link_to 'New Comment', new_comment_path, class: "btn btn-success btn-lg btn-block" %>
+              </td>
+           </tr>
+          </tbody>
+
+
+<div class="container">
+  <%= link_to 'New Comment', new_comment_path, class: "btn btn-success btn-lg btn-block" %>
+</div>
+   <div class="container">
+    <div class="row"> 
+      <div class="col-md-14 col"> 
+        <table class="table table-bordered table-striped table-hover">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Id:</th>
+              <th scope="col">Title:</th>
+              <th scope="col">Content:</th> 
+              <th scope="col">Created on</th>
+              <th scope="col">Updated on</th>
+              <th scope="col">Delete</th>
+            </tr>
+          </thead >
+             <% @comments.each do |comment| %>
+          <tbody id="killer<%= comment.id %>">
+           <tr>
+              <td><%= link_to comment.id, comment_path(comment), :class => 'btn btn-default'  %></td>
+              <th><%= comment.title %></td>
+              <td><%= comment.body %></td>
+              <td> <%= comment.created_at_formatted %></td>
+              <td><%= comment.updated_at_formatted %></td>
+              <td>  
+                 <%= link_to(comment_path(id: comment.id), method: :delete, remote: true) do %>
+                 <p class="text-center"><span class="glyphicon glyphicon-trash"></span></p>
+                 <% end %>
+              </td>
+           </tr>
+          </tbody>
+         <% end %>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+         <% end %>
+        </table>
+
+
+
+
+
+</div>
+
+
+      
+<h2><div id="linktovideos"> ALL VIDEOS </div></h2>
+<%for i in (1..10) do%> 
+<iframe width="150" height="140"
+src= <%=(@videos_per_character[i])%> >
+</iframe>
+<%end%>
+
+
+
+</div>
+
+
+

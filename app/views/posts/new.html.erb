@@ -1,0 +1,17 @@
+<h1 > New.html.erb for posts </h1>
+
+
+<%= form_with(model: @post) do |form| %>  
+ <%= form.hidden_field :user_id, value: current_user.id %>
+<strong>Title:</strong><br/>
+<%= form.text_field :title, placeholder: "lol" %><br/><br/>
+<div><strong>Content:</strong></div>
+<%= form.text_area :body %><br/><br/>             
+<%= form.submit :class => "btn btn-success"%>
+  <% end %>
+ 
+
+ 
+
+
+

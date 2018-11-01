@@ -1,0 +1,8 @@
+
+<%= form_with(model: @user_post) do |form| %>
+      <div><strong>User:</strong></div>
+      <%= form.select :user_id, options_for_select(@user, @user_post.user_id) %><br /><br/>
+      <div><strong>Post:</strong></div> 
+      <%= form.select :post_id, options_for_select(@post, @user_post.post_id) %><br /><br/>
+      <%= form.submit class:"btn btn-success" %>
+      <% end %>
