@@ -13,6 +13,7 @@ class CharactersController < ApplicationController
              name: item["name"],
            external_id: item["id"])
            end
+           puts @data
   end
 
   def show
