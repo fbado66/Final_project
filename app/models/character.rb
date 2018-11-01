@@ -4,6 +4,6 @@ class Character < ApplicationRecord
   #  validates :external_id, :uniqueness => true
 
   # has_many :posts
-  belongs_to :user
+  # belongs_to :user
 
 end
