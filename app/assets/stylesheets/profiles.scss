@@ -1,3 +1,49 @@
 // Place all the styles related to the Profiles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#landing_page{
+  background-image: image-url('cover.jpg');
+  background-repeat: no-repeat;
+  height: 800px;
+  padding: 10%;
+  display: flex;
+  width: 100%
+
+
+img{
+  height: 800px;
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+
+.main{
+  margin-top: -93px;
+  margin-left: 262px;
+  font-size: 50px;
+  inline-size: 15px;
+  font-family: 'Architects Daughter', cursive;
+  color: green;
+  text-shadow: 6px 5px yellow;
+}
+
+.button{
+  text-decoration: none;
+  color: black;
+  background-color: yellowgreen;
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-top: 15px;
+  border-radius: 8px;
+  box-shadow: -2px 2px black;
+  width: 30px; 
+  height: 30px;
+
+  
+}
+
+}

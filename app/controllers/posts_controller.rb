@@ -40,7 +40,7 @@ class PostsController < ApplicationController
         @datas = response.parsed_response["data"]
         @data_1 =@datas['character']['videos_url'][0]['video_url']
         @videos_per_character.push(@data_1)
-        puts @videos_per_character
+        # puts @videos_per_character
 
   end 
     end
@@ -86,7 +86,8 @@ class PostsController < ApplicationController
       post = Post.find(params[:id])
       post.update(
         title: params[:post][:title],
-        body: params[:post][:body]
+        body: params[:post][:body],
+        user_id: params[:post][:user_id]
       )
       redirect_to posts_path
     end

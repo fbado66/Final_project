@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
     end
   
     def show
-       @comment = Comment.find(params[:id])
+       @comment = Comment.find(params[:post_id])
     end
   
     def new
@@ -14,7 +14,8 @@ class CommentsController < ApplicationController
     def create
      comment = Comment.create(
         title: params[:comment][:title],
-        body: params[:comment][:body]
+        body: params[:comment][:body],
+        user_id: params[:comment][:user_id]
       )
        
       if session[:comment_id] = comment.id 
@@ -34,7 +35,8 @@ class CommentsController < ApplicationController
       comment = Comment.find(params[:id])
       comment.update(
         title: params[:post][:title],
-        body: params[:post][:body]
+        body: params[:post][:body],
+        user_id: params[:comment][:user_id]
       )
       redirect_to  comments_path
     end

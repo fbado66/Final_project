@@ -6,7 +6,7 @@
 <% i = 0%>
 <% loop do %>
 <%= @yay = ({character_id: current_user.character_id}).length%>
-      <%= User.where({character_id: current_user.character_id})[i].first_name %>  
+      <%= User.where({character_id: current_user.character_id})[0].first_name %>  
   <% i += 1 %>
   <% if i > @yay  %>
     <% break %>

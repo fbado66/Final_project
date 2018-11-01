@@ -9,15 +9,17 @@
         <div id="center"><%=link_to 'EDIT', edit_user_registration_path, class:"button" %></div> <br><br>
             <div class="subtitle"><h2>My Character</h2> <br></div>  <div class="titles"><h1><%=Character.find(current_user.character_id).name%></h1> </div><br><br>
                 <div id="center_1"><iframe width="320" height="500" src= <%=(@image)%> ></iframe></div>
+      
+        <div class="subtitle"> <h3>Squad:</h3></div> <div class="titles"><h3><%=@image_url['squad'].capitalize%></h3></div> 
+         <div class="subtitle"><h3>Rank:</h3></div> <div class="titles"><h3><%=@image_url['rank'].capitalize%></h3> </div>
+         <div class="subtitle"><h3>Skills:</h3></div> <div class="titles"><h3><%=@image_url['skills'][0]['stat'].capitalize%>, <%=@image_url['skills'][1]['stat'].capitalize%></h3></div> 
+         <div class="subtitle"><h3>Magic:</h3></div> <div class="titles"><h3><%=@image_url['powers'][0]['magic'].capitalize%></h3></div> <br>
 
-              <div class="subtitle"><h2>People in common </h2></div>     
-          <% i = 0%>
-<% loop do %> <% @yay = ({character_id: current_user.character_id}).length%>
-         <div class="titles"><h3> <%= User.where({character_id: current_user.character_id})[i].first_name.capitalize %></h3></div>
-        <% i += 1 %> <% if i > @yay  %> <% break %>
-  <% end %>
-        <% end %>    
-        <br>
+
+              <div class="subtitle"><h2>Someone you can relate to </h2></div> 
+         <div class="titles"><h3> <%= User.where({character_id: current_user.character_id})[0].first_name %></h3></div>
+
+        <br><br>
       <%= link_to 'POSTS', posts_path, class: "button_2" %>
         <br><br><br><br>
         <%= link_to 'VIDEOS', user_posts_path, class: "button_2"%>

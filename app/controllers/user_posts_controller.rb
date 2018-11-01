@@ -7,7 +7,7 @@ class UserPostsController < ApplicationController
     @datas = response.parsed_response["data"]
     @data_1 =@datas['character']['videos_url'][0]['video_url']
     @videos_per_character.push(@data_1)
-    puts @videos_per_character
+    @videos_per_character
 
 end 
   end

@@ -4,9 +4,9 @@ class CharactersController < ApplicationController
 
     response = HTTParty.get('https://enigmatic-sea-95747.herokuapp.com/')
       data = response.parsed_response["data"]
-      puts '!!!!!!!!!!!!!!'
-      p data[1]["id"]
-      puts '!!!!!!!!!!!!!!'
+      #  puts '!!!!!!!!!!!!!!'
+      #  p data[1]["id"]
+      #  puts '!!!!!!!!!!!!!!'
 
          data.each do |item|
            Character.create(

@@ -1,7 +1,7 @@
 class ProfilesController < ApplicationController
   def index
-    #  @character = Character.all
-    # @user = User.all
+      @character = Character.all
+     @user = User.all
     @users = current_user.character_id
   #  current_user.character_id=User.where(params[:@users]) { |c| [ c[1], c[3]] }
     @user = User.all
@@ -27,7 +27,7 @@ class ProfilesController < ApplicationController
     response = HTTParty.get("https://enigmatic-sea-95747.herokuapp.com/api/v1/characters/#{id}")
     @data = response.parsed_response["data"]
         @image =@data['character']['image_url']
-        @image_url =@data['character']
+        puts @image_url =@data['character']
         puts current_user.character_id
 
   end
@@ -39,12 +39,12 @@ class ProfilesController < ApplicationController
 
   def create
     users=params[:users_ids]
-  #   character_id= params[:users][:chararacter_id]
-  #  @post = Post.create(
-  #     title: params[:post][:title],
-  #     body: params[:post][:body],
-  #     user_id: params[:post][:user_id]
-  #   )
+     character_id= params[:users][:chararacter_id]
+    @post = Post.create(
+       title: params[:post][:title],
+       body: params[:post][:body],
+       user_id: params[:post][:user_id]
+    )
      
   end
 

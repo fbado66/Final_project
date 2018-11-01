@@ -6,6 +6,7 @@
               <%= form.text_field :title, placeholder: "comment" %><br/><br/>
               <div><strong>Content:</strong></div>
               <%= form.text_area :body %><br/><br/>
+            <%= form.hidden_field :user_id, value: current_user.id %>
               <%= form.submit :class => "btn btn-success"%>
              <% end %>
  

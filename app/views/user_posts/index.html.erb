@@ -2,9 +2,9 @@
 <p>Find me in app/views/user_posts/index.html.erb</p>
 
 
-<h2><div id="linktovideos"> ALL VIDEOS </div></h2>
-<%for i in (1..10) do%> 
-<iframe width="350" height="230"
+<h2><div class="center"> VIDEOS </div></h2>
+<%for i in (1..9) do%> 
+<iframe width="350" height="150"
 src= <%=(@videos_per_character[i])%> >
 </iframe>
 <%end%>
