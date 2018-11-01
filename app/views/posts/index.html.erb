@@ -3,7 +3,11 @@
 <div class="titles_2"><h1 style="font-size:70px">Black Clover</h1></div>
 
 <div class="container">
- <a href="http://localhost:3000/"><div class="link", style="width:100px;margin-left:50px;text-decoration:none;">Profile</div></a>
+
+
+        <div id="size"><%= link_to 'Profile', profile_path(current_user.id), class: "btn btn-success btn-lg btn-block col-md-7 offset-md-1 col" %></div>
+
+
  </div>
  
 <div class="subtitle_2"><h2 style="margin-right:240px;"><%=Character.find(@user.character_id).name%></h2></div><br><br>
@@ -14,7 +18,8 @@
     </div>
 <div class="container">
 <br>
-        <div id="size"><%= link_to 'New Post', new_post_path, class: "btn btn-success btn-lg btn-block col-md-7 offset-md-1 col" %></div>
+
+
         <br>
         <br>
 </div>
